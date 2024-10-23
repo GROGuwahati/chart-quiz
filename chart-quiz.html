@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .quiz-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      margin-bottom: 30px;
+    }
+    .question img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .options {
+      margin-top: 10px;
+    }
+    .options button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #E84E0F;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .options button:hover {
+      background-color: #d4410b;
+    }
+    .correct {
+      background-color: #4CAF50;
+    }
+    .incorrect {
+      background-color: #f44336;
+    }
+    .feedback {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .quiz-container {
+        padding: 15px;
+      }
+      .options button {
+        font-size: 14px;
+        padding: 8px;
+      }
+      .result {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <!-- Question 1 -->
+    <div class="question">
+      <h3>1. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/bar%20chart.png?raw=true" alt="Bar Chart">
+      <div class="options">
+        <button onclick="checkAnswer(this, true)">Bar Chart</button>
+        <button onclick="checkAnswer(this, false)">Pie Chart</button>
+        <button onclick="checkAnswer(this, false)">Line Chart</button>
+        <button onclick="checkAnswer(this, false)">Scatter Plot</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+      <h3>2. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/piechart.png?raw=true" alt="Pie Chart">
+      <div class="options">
+        <button onclick="checkAnswer(this, false)">Radar Chart</button>
+        <button onclick="checkAnswer(this, true)">Pie Chart</button>
+        <button onclick="checkAnswer(this, false)">Histogram</button>
+        <button onclick="checkAnswer(this, false)">Bubble Chart</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+      <h3>3. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/line%20chart%20.png?raw=true" alt="Line Chart">
+      <div class="options">
+        <button onclick="checkAnswer(this, true)">Line Chart</button>
+        <button onclick="checkAnswer(this, false)">Heat Map</button>
+        <button onclick="checkAnswer(this, false)">Bar Chart</button>
+        <button onclick="checkAnswer(this, false)">Scatter Plot</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+      <h3>4. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/scatterplot.png?raw=true" alt="Scatter Plot">
+      <div class="options">
+        <button onclick="checkAnswer(this, false)">Pie Chart</button>
+        <button onclick="checkAnswer(this, false)">Line Chart</button>
+        <button onclick="checkAnswer(this, true)">Scatter Plot</button>
+        <button onclick="checkAnswer(this, false)">Radar Chart</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+      <h3>5. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/histogram.png?raw=true" alt="Histogram">
+      <div class="options">
+        <button onclick="checkAnswer(this, false)">Scatter Plot</button>
+        <button onclick="checkAnswer(this, false)">Box Plot</button>
+        <button onclick="checkAnswer(this, true)">Histogram</button>
+        <button onclick="checkAnswer(this, false)">Bubble Chart</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Additional Questions -->
+    <div class="question">
+      <h3>6. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/bubble%20chart.png?raw=true" alt="Bubble Chart">
+      <div class="options">
+        <button onclick="checkAnswer(this, false)">Line Chart</button>
+        <button onclick="checkAnswer(this, false)">Scatter Plot</button>
+        <button onclick="checkAnswer(this, true)">Bubble Chart</button>
+        <button onclick="checkAnswer(this, false)">Radar Chart</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <h3>7. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/heatmap.png?raw=true" alt="Heat Map">
+      <div class="options">
+        <button onclick="checkAnswer(this, true)">Heat Map</button>
+        <button onclick="checkAnswer(this, false)">Box Plot</button>
+        <button onclick="checkAnswer(this, false)">Radar Chart</button>
+        <button onclick="checkAnswer(this, false)">Pie Chart</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <h3>8. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/boxplot%20.png?raw=true" alt="Box Plot">
+      <div class="options">
+        <button onclick="checkAnswer(this, true)">Box Plot</button>
+        <button onclick="checkAnswer(this, false)">Bar Chart</button>
+        <button onclick="checkAnswer(this, false)">Histogram</button>
+        <button onclick="checkAnswer(this, false)">Scatter Plot</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <h3>9. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/radar%20chart.png?raw=true" alt="Radar Chart">
+      <div class="options">
+        <button onclick="checkAnswer(this, true)">Radar Chart</button>
+        <button onclick="checkAnswer(this, false)">Line Chart</button>
+        <button onclick="checkAnswer(this, false)">Bar Chart</button>
+        <button onclick="checkAnswer(this, false)">Doughnut Chart</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <h3>10. What type of chart is this?</h3>
+      <img src="https://github.com/GROGuwahati/Phase2-Presentation/blob/40a32a4051a8fff1850b89a55cb0ffbc97167cdd/polar%20area%20chart.png?raw=true" alt="Polar Area Chart">
+      <div class="options">
+        <button onclick="checkAnswer(this, false)">Polar Area Chart</button>
+        <button onclick="checkAnswer(this, true)">Doughnut Chart</button>
+        <button onclick="checkAnswer(this, false)">Bar Chart</button>
+        <button onclick="checkAnswer(this, false)">Line Chart</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    let score = 0;
+    let totalQuestions = 10;
+
+    function checkAnswer(button, isCorrect) {
+      const feedback = button.parentElement.nextElementSibling;
+
+      if (isCorrect) {
+        feedback.textContent = 'Correct!';
+        feedback.classList.add('feedback', 'correct');
+        feedback.classList.remove('incorrect');
+        score++;
+      } else {
+        feedback.textContent = 'Incorrect!';
+        feedback.classList.add('feedback', 'incorrect');
+        feedback.classList.remove('correct');
+      }
+
+      // Disable all buttons in the question
+      const buttons = button.parentElement.children;
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+      }
+
+      // Show result after all questions are answered
+      const questions = document.querySelectorAll('.question');
+      if (Array.from(questions).every(q => q.querySelector('.feedback').textContent)) {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = `Your score: ${score} out of ${totalQuestions}`;
+    }
+  </script>
+</body>
+</html>
